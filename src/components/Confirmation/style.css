@@ -1,0 +1,54 @@
+.confirmation-overlay {
+  background: rgba(0, 0, 0, 0.2);
+}
+.confirmation-overlay .confirmation {
+  align-items: center;
+  background: var(--background-color);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  min-height: 120px;
+  padding: 20px;
+}
+.confirmation-overlay .confirmation h1 {
+  font-size: 26px;
+}
+.confirmation-overlay .confirmation .buttons {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  width: 80%;
+}
+.confirmation-overlay .buttons button {
+  border-radius: 5px;
+  border: 2px var(--text-color) solid;
+  cursor: pointer;
+  font-size: 22px;
+  height: 40px;
+  width: 100px;
+}
+.confirmation-overlay .buttons .delete-button {
+  background: transparent;
+  color: var(--text-color);
+  transition: all 0.5s ease;
+}
+.confirmation-overlay .buttons .cancel-button {
+  background: var(--text-color);
+  color: var(--background-color);
+  transition: all 0.3s ease;
+}
+.confirmation-overlay .buttons .delete-button:hover,
+.confirmation-overlay .buttons .cancel-button:hover {
+  background: var(--text-color-hover);
+  border: 2px var(--text-color-hover) solid;
+}
+
+@media screen and (max-width: 700px) {
+  .confirmation-overlay .confirmation {
+    width: 85%;
+  }
+  .confirmation-overlay .confirmation .buttons {
+    width: 100%;
+  }
+}

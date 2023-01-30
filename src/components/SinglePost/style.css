@@ -1,0 +1,107 @@
+.modal-overlay {
+  align-items: center;
+  background: rgb(0, 0, 0, 0.4);
+  color: var(--text-color);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+.modal-overlay .modal {
+  background: var(--background-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 630px;
+  max-width: 700px;
+  overflow: hidden;
+  position: relative;
+  width: 700px;
+}
+.modal-overlay .modal .top-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  position: absolute;
+  right: -1px;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+.modal-overlay .modal .top-buttons button:first-child {
+  border-bottom-left-radius: 10px;
+}
+.modal-overlay .modal .top-buttons button {
+  background: var(--background-color);
+  border: 1px;
+  color: var(--text-color);
+  cursor: pointer;
+  font-weight: bold;
+  height: 25px;
+  transition: all 0.1s ease;
+  width: 50px;
+}
+.modal-overlay .modal button:hover {
+  background: rgb(41, 58, 90);
+}
+.modal-overlay .modal .image {
+  display: block;
+  width: 100%;
+}
+.modal-overlay .modal .image img {
+  box-shadow: rgba(0, 0, 0, 0.74) 0px 0px 20px;
+  filter: brightness(90%);
+  height: 320px;
+  object-fit: cover;
+  user-select: none;
+  width: 100%;
+}
+.modal-overlay .modal .information {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+.modal-overlay .modal .information h1 {
+  font-size: 2rem;
+}
+.modal-overlay .modal .information p {
+  color: var(--text-color-hover);
+  line-height: 25px;
+}
+.description-line {
+  display: inline-block;
+  width: 100%;
+}
+@media screen and (max-width: 900px) {
+  .modal-overlay .modal .top-buttons button {
+    font-size: 20px;
+    height: 40px;
+    width: 75px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .modal-overlay .modal {
+    width: 90%;
+  }
+}
+@media screen and (min-height: 500px) {
+  .modal-overlay .modal {
+    overflow-y: none;
+  }
+  .modal-overlay .modal .information {
+    overflow: auto;
+  }
+}
+@media screen and (max-height: 500px) {
+  .modal-overlay .modal {
+    height: 90%;
+    overflow-y: auto;
+  }
+  .modal-overlay .modal .information {
+    height: 500px;
+    overflow: none;
+  }
+}

@@ -1,0 +1,111 @@
+.new-post-form {
+  align-items: center;
+  background: rgb(41, 58, 90);
+  border-radius: 5px;
+  box-shadow: #000 3px 3px 6px -3px;
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 600px;
+  min-height: 400px;
+  padding: 30px;
+  width: 800px;
+}
+.new-post-form h1 {
+  font-size: 2rem;
+}
+.new-post-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.new-post-form form label {
+  font-size: 1.7rem;
+}
+.new-post-form form input {
+  height: 30px;
+  width: 100%;
+}
+.new-post-form form input[type="text"],
+.new-post-form form textarea {
+  background: var(--background-color);
+  border-radius: 2px;
+  border: 0px;
+  box-shadow: inset -5px -5px 27px -16px #000;
+  color: var(--text-color-hover);
+  font-size: 20px;
+  max-width: 100%;
+  min-width: 100%;
+  outline: 1px solid var(--text-color-hover);
+  padding: 5px;
+}
+.new-post-form form textarea {
+  height: 230px;
+  resize: none;
+}
+.new-post-form form .buttons {
+  display: flex;
+  gap: 10px;
+  padding: 20px 0px 0px 0px;
+  width: 100%;
+}
+.new-post-form form .buttons button {
+  background: var(--background-color);
+  border-radius: 2px;
+  border: 1px var(--text-color-hover) solid;
+  color: var(--text-color-hover);
+  cursor: pointer;
+  font-size: 20px;
+  height: 3rem;
+  transition: all 0.3s ease;
+  user-select: none;
+  width: 7.5rem;
+}
+.new-post-form form .buttons button:hover {
+  background: var(--text-color-hover);
+  color: var(--background-color);
+}
+@media screen and (max-width: 900px) {
+  .new-post-form {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .new-post-form {
+    overflow: auto;
+  }
+  .new-post-form h1 {
+    font-size: 20px;
+  }
+  .new-post-form form label {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  .new-post-form {
+    padding: 15px;
+  }
+  .new-post-form h1 {
+    font-size: 18px;
+  }
+  .new-post-form form label {
+    font-size: 0.8rem;
+  }
+  .new-post-form form input[type="text"] {
+    height: 2rem;
+  }
+  .new-post-form form input[type="text"],
+  .new-post-form form textarea {
+    font-size: 15px;
+  }
+  .new-post-form form .buttons button {
+    font-size: 18px;
+  }
+}
+@media screen and (max-height: 650px) {
+  .new-post {
+    height: 750px;
+  }
+}

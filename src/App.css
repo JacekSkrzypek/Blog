@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+:root {
+  --background-color: rgb(37, 48, 68);
+  --font-size: 1.5rem;
+  --text-color-hover: #55b5db;
+  --text-color: #5c9deb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--background-color);
+}
