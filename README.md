@@ -13,3 +13,8 @@ Project is created with:
 - React v18.x (including `react-router-dom`)
 - JavaScript (ES6)
 - CSS
+
+## View
+
+![About me section](./aboutMe.jpg)
+![My posts section](./myPosts.jpg)
