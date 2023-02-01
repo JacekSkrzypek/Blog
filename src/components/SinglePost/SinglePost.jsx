@@ -3,8 +3,10 @@ import "./style.css";
 import { useGlobalContext } from "../../context";
 import EditPost from "../EditPost";
 import { useState } from "react";
-import { TEXTS } from "../../constans";
+import { TEXTS, IMAGES } from "../../constans";
 import Confirmation from "../Confirmation";
+import { FiEdit } from "react-icons/fi";
+import { BiTrash } from 'react-icons/bi';
 
 const SinglePost = ({ isCreateNewPost }) => {
   const { data, functions } = useGlobalContext();
@@ -18,6 +20,12 @@ const SinglePost = ({ isCreateNewPost }) => {
     setIsDelete(!isDelete);
   };
 
+  const handleModalDisplay = (event) => {
+    if (event.target.className === "modal-overlay") {
+      setSelectedPost(null);
+    }
+  };
+
   const changeEditMode = () => {
     setIsEdit(!isEdit);
   };
@@ -25,22 +33,23 @@ const SinglePost = ({ isCreateNewPost }) => {
   const descriptionLines = description.split(TEXTS.newLineSymbol);
 
   return (
-    <aside className="modal-overlay">
+    <aside className="modal-overlay" onClick={handleModalDisplay}>
       <div className="modal">
         <div className="top-buttons">
           {!isCreateNewPost && (
             <>
-              <button onClick={handleIsDelete}> delete </button>
-              <button onClick={changeEditMode}> edit </button>
+              <button onClick={handleIsDelete}> <BiTrash className='button-icon' /> </button>
+              <button onClick={changeEditMode}> <FiEdit className='button-icon' /> </button>
             </>
           )}
-          <button onClick={() => setSelectedPost(null)}> back </button>
         </div>
 
         {!isEdit ? (
           <>
             <div className="image">
-              <img src={image} alt={title} />
+              <img src={image} 
+                alt={title} 
+                onError={({ currentTarget }) => {currentTarget.onerror = null; currentTarget.src = IMAGES.defaultImage }}/>
             </div>
             <div className="information">
               <h1>{title}</h1>

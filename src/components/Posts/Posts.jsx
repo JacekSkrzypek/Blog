@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import { useGlobalContext } from "../../context";
-import { NUMBERS } from "../../constans";
+import { NUMBERS, IMAGES } from "../../constans";
 import "./style.css";
 import "boxicons";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoMdHeartDislike } from "react-icons/io";
 
 const Posts = () => {
   const { data, functions } = useGlobalContext();
@@ -27,6 +27,7 @@ const Posts = () => {
                     src={image}
                     alt={title}
                     onClick={() => functions.selectPost(id)}
+                    onError={({ currentTarget }) => {currentTarget.onerror = null; currentTarget.src = IMAGES.defaultImage }}
                   />
                 </div>
                 <div className="post-title">

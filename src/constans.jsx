@@ -1,6 +1,8 @@
 export const IMAGES = {
   mainImage: "pexels-carlos-oliva-3586966.jpg", //Carlos Oliva: https://www.pexels.com/pl-pl/zdjecie/panorame-miasta-na-calej-powierzchni-wody-w-porze-nocnej-3586966/
   mainImageTitle: "City at night",
+  defaultImage: 'default-image.jpg',
+  defaultImageTitle: 'No image'
 };
 
 export const TEXTS = {

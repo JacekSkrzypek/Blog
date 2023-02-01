@@ -29,6 +29,7 @@
   top: 0;
   width: 100%;
   z-index: 50;
+  
 }
 .modal-overlay .modal .top-buttons button:first-child {
   border-bottom-left-radius: 10px;
@@ -39,9 +40,15 @@
   color: var(--text-color);
   cursor: pointer;
   font-weight: bold;
-  height: 25px;
+  height: 35px;
   transition: all 0.1s ease;
-  width: 50px;
+  width: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-overlay .modal .top-buttons .button-icon {
+  font-size: 20px;
 }
 .modal-overlay .modal button:hover {
   background: rgb(41, 58, 90);
