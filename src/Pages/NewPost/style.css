@@ -1,3 +1,11 @@
+.new-post-aside {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .new-post-form {
   align-items: center;
   background: rgb(41, 58, 90);

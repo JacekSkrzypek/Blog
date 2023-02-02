@@ -1,9 +1,7 @@
 import React from "react";
-import { useState } from "react";
 import { useGlobalContext } from "../../context";
 import { NUMBERS, IMAGES } from "../../constans";
-import "./style.css";
-import "boxicons";
+import "../modules.css";
 import { IoIosArrowDown, IoMdHeartDislike } from "react-icons/io";
 
 const Posts = () => {
@@ -15,7 +13,7 @@ const Posts = () => {
 
   return (
     <section className="posts-section">
-      <h1>My posts</h1>
+      <h1 className="section-title">My posts</h1>
       <div className="posts">
         {data.posts.map((post) => {
           const { id, title, image } = post;

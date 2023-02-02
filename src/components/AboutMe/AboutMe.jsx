@@ -1,13 +1,13 @@
 import React from "react";
-import "./style.css";
+import "../modules.css";
 import { TEXTS } from "../../constans";
 
 const AboutMe = () => {
   return (
-    <aside>
+    <aside className="about-me-aside">
       <article className="about-me">
-        <h1>About me</h1>
-        <p>{TEXTS.loremIpsum}</p>
+        <h1 className="header">About me</h1>
+        <p className="content">{TEXTS.loremIpsum}</p>
       </article>
     </aside>
   );

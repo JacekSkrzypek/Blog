@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "../../context";
 import { TEXTS } from "../../constans";
-import "./style.css";
+import "../modules.css";
 
 const EditPost = ({ changeEditMode }) => {
   const { data, functions } = useGlobalContext();
@@ -57,6 +57,7 @@ const EditPost = ({ changeEditMode }) => {
       <input type={"text"} value={title} onChange={handleChangeTitle} />
       <label>Description:</label>
       <textarea
+        className='textarea'
         onChange={handleChangeDecription}
         value={getDescription(description)}
       />
@@ -64,12 +65,8 @@ const EditPost = ({ changeEditMode }) => {
       <input type={"text"} onChange={handleChangePhotoPath} value={photoPath} />
 
       <div className="buttons">
-        <button type="button" onClick={handleEditPost}>
-          Edit
-        </button>
-        <button type="button" onClick={changeEditMode}>
-          Cancel
-        </button>
+        <button className="button" type="button" onClick={handleEditPost}> Edit </button>
+        <button className="button" type="button" onClick={changeEditMode}> Cancel </button>
       </div>
     </form>
   );

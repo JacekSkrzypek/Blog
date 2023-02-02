@@ -59,7 +59,7 @@ const NewPost = () => {
   };
 
   return (
-    <aside className="new-post">
+    <aside className="new-post-aside">
       <section className="new-post-form">
         <h1>Add your new post</h1>
         <form>

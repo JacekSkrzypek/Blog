@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "../modules.css";
 import { useGlobalContext } from "../../context";
 import EditPost from "../EditPost";
 import { useState } from "react";

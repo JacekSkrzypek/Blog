@@ -1,0 +1,460 @@
+:root {
+    --text-color-hover: #55b5db;
+    --text-color: #5c9deb;
+  }
+
+/* About me */
+
+.about-me-aside {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .about-me {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-height: 600px;
+    min-height: 300px;
+    padding: 50px;
+    width: 900px;
+  }
+
+  .about-me > .header {
+    font-size: 35px;
+  }
+
+  .about-me > .content {
+    color: var(--text-color-hover);
+    font-size: 19px;
+    line-height: 30px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .about-me {
+      width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 530px) {
+    .about-me {
+      overflow: auto;
+      padding: 25px;
+    }
+
+    .about-me > .content{
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+
+  /* Confirmation */
+
+  .confirmation-overlay {
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .confirmation-overlay .confirmation {
+    align-items: center;
+    background: var(--background-color);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    min-height: 120px;
+    padding: 20px;
+  }
+
+  .confirmation-overlay .confirmation .question {
+    font-size: 26px;
+  }
+
+  .confirmation-overlay .confirmation .buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    width: 80%;
+  }
+
+  .confirmation-overlay .buttons .delete-button,
+  .confirmation-overlay .buttons .cancel-button {
+    border-radius: 5px;
+    border: 2px var(--text-color) solid;
+    cursor: pointer;
+    font-size: 22px;
+    height: 40px;
+    width: 100px;
+  }
+
+  .confirmation-overlay .buttons .delete-button {
+    background: transparent;
+    color: var(--text-color);
+    transition: all 0.5s ease;
+  }
+
+  .confirmation-overlay .buttons .cancel-button {
+    background: var(--text-color);
+    color: var(--background-color);
+    transition: all 0.3s ease;
+  }
+
+  .confirmation-overlay .buttons .delete-button:hover,
+  .confirmation-overlay .buttons .cancel-button:hover {
+    background: var(--text-color-hover);
+    border: 2px var(--text-color-hover) solid;
+  }
+  
+  @media screen and (max-width: 700px) {
+    .confirmation-overlay .confirmation {
+      width: 85%;
+    }
+    .confirmation-overlay .confirmation .buttons {
+      width: 100%;
+    }
+  }
+  
+  /* Edit post */
+
+  .edit-post .buttons {
+    display: flex;
+    gap: 10px;
+    padding: 20px 0px 0px 0px;
+    width: 100%;
+  }
+
+  .edit-post .buttons .button {
+    background: var(--background-color);
+    border-radius: 2px;
+    border: 1px var(--text-color-hover) solid;
+    color: var(--text-color-hover);
+    cursor: pointer;
+    font-size: 20px;
+    height: 2.2rem;
+    position: block;
+    transition: all 0.3s ease;
+    user-select: none;
+    width: 5rem;
+  }
+
+  .edit-post .textarea {
+    min-height: 250px;
+    resize: none;
+  }
+
+  .edit-post .button:hover {
+    background: rgb(41, 58, 90);
+  }
+
+  .edit-post {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 40px;
+  }
+
+  .edit-post > input[type="text"],
+  .edit-post .textarea {
+    background: var(--background-color);
+    border-radius: 2px;
+    border: 0px;
+    box-shadow: inset -5px -5px 27px -16px #000;
+    color: var(--text-color-hover);
+    font-size: 15px;
+    max-width: 100%;
+    min-width: 100%;
+    outline: 1px solid var(--text-color-hover);
+    padding: 5px;
+  }
+
+  /* Navbar */ 
+
+  :root {
+    --font-size: 1.5rem;
+  }
+  .navbar {
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.548), rgba(0, 0, 0, 0));
+    display: flex;
+    font-family: "Lato", sans-serif;
+    font-size: var(--font-size);
+    font-weight: bold;
+    height: 4rem;
+    justify-content: center;
+    padding: 2rem;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+  .navbar ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+  }
+  .navbar li {
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  .navbar li .link,
+  .navbar li {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .navbar li .link:hover,
+  .navbar li:hover {
+    color: var(--text-color-hover);
+    text-shadow: 1px 1px 20px;
+  }
+  @media screen and (max-width: 700px) {
+    .navbar {
+      font-size: 19px;
+    }
+  }
+  @media screen and (max-width: 350px) {
+    .navbar {
+      font-size: 13px;
+    }
+  }
+
+  /* Posts */
+
+  :root {
+    --post-border-radius: 10px;
+  }
+  
+  .posts-section {
+    align-items: center;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0;
+  }
+
+  .posts-section .section-title {
+    font-size: 3rem;
+  }
+
+  .posts {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 30px;
+    width: 80%;
+  }
+
+  .posts .post {
+    background: rgb(41, 58, 90);
+    border-top-left-radius: var(--post-border-radius);
+    border-top-right-radius: var(--post-border-radius);
+    box-shadow: rgba(0, 0, 0, 0.349) 5px 5px 7px -2px;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .post .post-image {
+    height: 70%;
+  }
+
+  .post .post-title {
+    padding: 10px;
+  }
+
+  .post .post-image img {
+    cursor: pointer;
+    filter: brightness(80%);
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    user-select: none;
+    width: 100%;
+  }
+
+  .post .post-image img:hover {
+    filter: brightness(100%);
+  }
+
+  .show-more {
+    align-items: center;
+    background: transparent;
+    border-radius: 50%;
+    border: 2px var(--text-color) solid;
+    cursor: pointer;
+    display: flex;
+    height: 3rem;
+    justify-content: center;
+    transition: all 0.2s ease;
+    width: 3rem;
+  }
+
+  .react-icons {
+    color: var(--text-color);
+    font-size: 1.6rem;
+  }
+
+  .show-more:hover {
+    border-color: var(--text-color-hover);
+  }
+
+  .show-more:hover .react-icons {
+    color: var(--text-color-hover);
+  }
+
+  @media screen and (max-width: 1100px) {
+    .posts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .posts {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 95%;
+    }
+  }
+  
+  /* SinglePost */
+
+  .modal-overlay {
+    align-items: center;
+    background: rgb(0, 0, 0, 0.4);
+    color: var(--text-color);
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    left: 0;
+  }
+  
+  .modal-overlay .modal {
+    background: var(--background-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 630px;
+    max-width: 700px;
+    overflow: hidden;
+    position: relative;
+    width: 700px;
+  }
+  
+  .modal-overlay .modal .top-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    position: absolute;
+    right: -1px;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    
+  }
+  
+  .modal-overlay .modal .top-buttons button:first-child {
+    border-bottom-left-radius: 10px;
+  }
+  
+  .modal-overlay .modal .top-buttons button {
+    background: var(--background-color);
+    border: 1px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-weight: bold;
+    height: 35px;
+    transition: all 0.1s ease;
+    width: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-overlay .modal .top-buttons .button-icon {
+    font-size: 20px;
+  }
+  
+  .modal-overlay .modal button:hover {
+    background: rgb(41, 58, 90);
+  }
+  
+  .modal-overlay .modal .image {
+    display: block;
+    width: 100%;
+  }
+  
+  .modal-overlay .modal .image img {
+    box-shadow: rgba(0, 0, 0, 0.74) 0px 0px 20px;
+    filter: brightness(90%);
+    height: 320px;
+    object-fit: cover;
+    user-select: none;
+    width: 100%;
+  }
+  
+  .modal-overlay .modal .information {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+  }
+  
+  .modal-overlay .modal .information h1 {
+    font-size: 2rem;
+  }
+  
+  .modal-overlay .modal .information p {
+    color: var(--text-color-hover);
+    line-height: 25px;
+  }
+  
+  .description-line {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 900px) {
+    .modal-overlay .modal .top-buttons button {
+      font-size: 20px;
+      height: 40px;
+      width: 75px;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .modal-overlay .modal {
+      width: 90%;
+    }
+  }
+  
+  @media screen and (min-height: 500px) {
+    .modal-overlay .modal {
+      overflow-y: none;
+    }
+    .modal-overlay .modal .information {
+      overflow: auto;
+    }
+  }
+  
+  @media screen and (max-height: 500px) {
+    .modal-overlay .modal {
+      height: 90%;
+      overflow-y: auto;
+    }
+    .modal-overlay .modal .information {
+      height: 500px;
+      overflow: none;
+    }
+  }
+  

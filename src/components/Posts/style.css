@@ -1,6 +1,7 @@
 :root {
   --post-border-radius: 10px;
 }
+
 .posts-section {
   align-items: center;
   color: var(--text-color);
@@ -8,9 +9,11 @@
   flex-direction: column;
   padding: 25px 0;
 }
-.posts-section h1 {
+
+.posts-section .section-title {
   font-size: 3rem;
 }
+
 .posts {
   display: grid;
   gap: 2rem;
@@ -18,6 +21,7 @@
   padding: 30px;
   width: 80%;
 }
+
 .posts .post {
   background: rgb(41, 58, 90);
   border-top-left-radius: var(--post-border-radius);
@@ -26,13 +30,17 @@
   height: 300px;
   overflow: hidden;
 }
+
 .post .post-image {
   height: 70%;
 }
+
 .post .post-title {
   padding: 10px;
 }
-.post .post-image img {
+
+.post .post-image
+ img {
   cursor: pointer;
   filter: brightness(80%);
   height: 100%;
@@ -41,9 +49,11 @@
   user-select: none;
   width: 100%;
 }
+
 .post .post-image img:hover {
   filter: brightness(100%);
 }
+
 .show-more {
   align-items: center;
   background: transparent;
@@ -56,22 +66,27 @@
   transition: all 0.2s ease;
   width: 3rem;
 }
+
 .react-icons {
   color: var(--text-color);
   font-size: 1.6rem;
 }
+
 .show-more:hover {
   border-color: var(--text-color-hover);
 }
+
 .show-more:hover .react-icons {
   color: var(--text-color-hover);
 }
+
 @media screen and (max-width: 1100px) {
   .posts {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media screen and (max-width: 650px) {
   .posts {
     display: grid;

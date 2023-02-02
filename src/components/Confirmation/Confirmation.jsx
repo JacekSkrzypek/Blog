@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "../modules.css";
 import { useGlobalContext } from "../../context";
 
 const Confirmation = ({ handleIsDelete }) => {
@@ -23,14 +23,10 @@ const Confirmation = ({ handleIsDelete }) => {
   return (
     <aside className="confirmation-overlay" onClick={handleHideModal}>
       <div className="confirmation">
-        <h1>Are you sure to delete this post?</h1>
+        <h1 className="question">Are you sure to delete this post?</h1>
         <div className="buttons">
-          <button className="delete-button" onClick={handleDeletePost}>
-            Delete
-          </button>
-          <button className="cancel-button" onClick={handleHideModal}>
-            Cancel
-          </button>
+          <button className="delete-button" onClick={handleDeletePost}> Delete </button>
+          <button className="cancel-button" onClick={handleHideModal}> Cancel </button>
         </div>
       </div>
     </aside>
