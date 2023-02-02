@@ -1,6 +1,6 @@
 import React from "react";
 import "../modules.css";
-import { TEXTS } from "../../constans";
+import { TEXTS } from "../../constants";
 
 const AboutMe = () => {
   return (

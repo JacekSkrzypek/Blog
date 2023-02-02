@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { POSTS } from "./constans";
+import { POSTS, TEXTS } from "./constants";
 
 const AppContext = React.createContext();
 
@@ -31,6 +31,16 @@ export const AppProvider = ({ children }) => {
     setSelectedPost(null);
   };
 
+  const addLineBreak = (text) => {
+    const lines = text.split("\n");
+    return lines.join(TEXTS.newLineSymbol);
+  };
+
+  const removeLineBreak = (text) => {
+    const lines = text.split(TEXTS.newLineSymbol);
+    return lines.join("\n");
+  }
+
   const data = {
     posts,
     selectedPost,
@@ -38,9 +48,11 @@ export const AppProvider = ({ children }) => {
   };
 
   const functions = {
+    addLineBreak,
     addPost,
     editPost,
     deletePost,
+    removeLineBreak,
     selectPost,
     setPosts,
     setPostCount,

@@ -1,45 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { useGlobalContext } from "../../context";
-import { TEXTS } from "../../constans";
 import "../modules.css";
+import { useForm } from "react-hook-form";
 
 const EditPost = ({ changeEditMode }) => {
   const { data, functions } = useGlobalContext();
-
-  const [title, setTitle] = useState(data.selectedPost.title);
-  const [description, setDescription] = useState(data.selectedPost.description);
-  const [photoPath, setPhotoPath] = useState(data.selectedPost.image);
-
-  const getDescription = (odlDescription) => {
-    let text = odlDescription.split(TEXTS.newLineSymbol);
-    text = text.join("\n");
-    return text;
-  };
-
-  const handleChangeTitle = (event) => {
-    setTitle(event.target.value);
-  };
-
-  const handleChangeDecription = (event) => {
-    let text = event.target.value;
-
-    setDescription(text);
-    let lines = text.split("\n");
-    text = lines.join(TEXTS.newLineSymbol);
-    setDescription(text);
-  };
-
-  const handleChangePhotoPath = (event) => {
-    setPhotoPath(event.target.value);
-  };
+  const { register, watch, handleSubmit } = useForm({defaultValues: {
+    title: data.selectedPost.title,
+    description: functions.removeLineBreak(data.selectedPost.description),
+    image: data.selectedPost.image
+  }});
 
   const getPost = () => {
     const id = data.selectedPost.id;
     const post = {
       id,
-      title,
-      description,
-      image: photoPath,
+      title: watch('title'),
+      description: functions.addLineBreak(watch('description')),
+      image: watch('image')
     };
     return post;
   };
@@ -52,17 +30,15 @@ const EditPost = ({ changeEditMode }) => {
   };
 
   return (
-    <form className="edit-post">
+    <form className="edit-post" onSubmit={handleSubmit(() => {
+      handleEditPost();
+    })}>
       <label>Title:</label>
-      <input type={"text"} value={title} onChange={handleChangeTitle} />
+      <input {...register('title')} type={"text"} />
       <label>Description:</label>
-      <textarea
-        className='textarea'
-        onChange={handleChangeDecription}
-        value={getDescription(description)}
-      />
+      <textarea {...register('description')} className='textarea' />
       <label>Path to photo:</label>
-      <input type={"text"} onChange={handleChangePhotoPath} value={photoPath} />
+      <input {...register('image')} type={"text"}  />
 
       <div className="buttons">
         <button className="button" type="button" onClick={handleEditPost}> Edit </button>

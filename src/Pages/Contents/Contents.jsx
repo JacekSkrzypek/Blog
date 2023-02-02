@@ -1,5 +1,5 @@
-import React, { Suspense, useState } from "react";
-import { IMAGES, NUMBERS } from "../../constans";
+import React from "react";
+import { IMAGES } from "../../constants";
 import AboutMe from "../../components/AboutMe";
 import SinglePost from "../../components/SinglePost";
 import "./style.css";

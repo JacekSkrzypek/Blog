@@ -1,5 +1,5 @@
 import React from "react";
-import { NUMBERS, IMAGES } from "../../constans";
+import { NUMBERS, IMAGES } from "../../constants";
 import { useGlobalContext } from "../../context";
 
 function Thumbnail() {

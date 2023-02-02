@@ -1,8 +1,8 @@
 import React from "react";
 import { useGlobalContext } from "../../context";
-import { NUMBERS } from "../../constans";
+import { NUMBERS } from "../../constants";
 import "../modules.css";
-import { IoIosArrowDown, IoMdHeartDislike } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
 import Thumbnail from '../Thumbnail';
 
 const Posts = () => {

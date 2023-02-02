@@ -3,7 +3,7 @@ import "../modules.css";
 import { useGlobalContext } from "../../context";
 import EditPost from "../EditPost";
 import { useState } from "react";
-import { TEXTS, IMAGES } from "../../constans";
+import { TEXTS, IMAGES } from "../../constants";
 import Confirmation from "../Confirmation";
 import { FiEdit } from "react-icons/fi";
 import { BiTrash } from 'react-icons/bi';

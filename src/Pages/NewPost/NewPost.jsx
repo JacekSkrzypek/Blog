@@ -3,7 +3,7 @@ import "./style.css";
 import { useGlobalContext } from "../../context";
 import SinglePost from "../../components/SinglePost";
 import { useNavigate } from "react-router-dom";
-import { TEXTS } from "../../constans";
+import { TEXTS } from "../../constants";
 import { useForm } from "react-hook-form";
 
 const NewPost = () => {
@@ -11,11 +11,6 @@ const NewPost = () => {
   const {register, watch, handleSubmit} = useForm();
 
   const navigate = useNavigate();
-
-  const getDescription = (description) => {
-    const lines = description.split("\n");
-    return lines.join(TEXTS.newLineSymbol);
-  };
 
   const getPostId = () => {
     if(!data.posts[0]) {
@@ -29,7 +24,7 @@ const NewPost = () => {
     const post = {
       id,
       title: watch('title'),
-      description: getDescription(watch('description')),
+      description: functions.addLineBreak(watch('description')),
       image: watch('image')
     }
     return post;
