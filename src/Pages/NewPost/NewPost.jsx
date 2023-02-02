@@ -1,60 +1,47 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
 import { useGlobalContext } from "../../context";
 import SinglePost from "../../components/SinglePost";
 import { useNavigate } from "react-router-dom";
 import { TEXTS } from "../../constans";
+import { useForm } from "react-hook-form";
 
 const NewPost = () => {
   const { data, functions } = useGlobalContext();
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [photoPath, setPhotoPath] = useState("");
+  const {register, watch, handleSubmit} = useForm();
 
   const navigate = useNavigate();
 
-  const handleChangeTitle = (event) => {
-    setTitle(event.target.value);
+  const getDescription = (description) => {
+    const lines = description.split("\n");
+    return lines.join(TEXTS.newLineSymbol);
   };
 
-  const handleChangeDecription = (event) => {
-    setDescription(event.target.value);
-  };
+  const getPostId = () => {
+    if(!data.posts[0]) {
+      return  0;} 
 
-  const handleChangePhotoPath = (event) => {
-    setPhotoPath(event.target.value);
-  };
-
-  const getDescription = () => {
-    let text = description;
-    let lines = text.split("\n");
-    text = lines.join(TEXTS.newLineSymbol);
-    return text;
-  };
+    return data.posts[0].id + 1;
+  }
 
   const getPost = () => {
-    let id;
-
-    if(!data.posts[0]) {
-      id = 0;
-    } else {
-    id = data.posts[0].id + 1;}
-    
+    const id =  getPostId();
     const post = {
       id,
-      title,
-      description: getDescription(),
-      image: photoPath,
-    };
+      title: watch('title'),
+      description: getDescription(watch('description')),
+      image: watch('image')
+    }
     return post;
-  };
+  }
 
   const handleShowPost = () => {
     functions.setSelectedPost(getPost());
   };
 
   const handleAddPost = () => {
-    functions.addPost(getPost());
+    const post = getPost();
+    functions.addPost(post);
     navigate("/");
   };
 
@@ -62,21 +49,19 @@ const NewPost = () => {
     <aside className="new-post-aside">
       <section className="new-post-form">
         <h1>Add your new post</h1>
-        <form>
+        <form onSubmit={handleSubmit(() => {
+          handleAddPost();
+        })}>
           <label>Title:</label>
-          <input type={"text"} onChange={handleChangeTitle} />
+          <input {...register('title')} type={"text"}  />
           <label>Description:</label>
-          <textarea onChange={handleChangeDecription} />
+          <textarea {...register('description')} />
           <label>Path to photo:</label>
-          <input type={"text"} onChange={handleChangePhotoPath} />
+          <input {...register('image')} type={"text"}  />
 
           <div className="buttons">
-            <button type="button" onClick={handleAddPost}>
-              Add
-            </button>
-            <button type="button" onClick={handleShowPost}>
-              Show post
-            </button>
+            <button type="submit"> Add</button>
+            <button type="button" onClick={handleShowPost}> Show post </button>
           </div>
         </form>
       </section>
