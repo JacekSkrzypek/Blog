@@ -61,6 +61,14 @@
 
   .confirmation-overlay {
     background: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
   }
 
   .confirmation-overlay .confirmation {
@@ -338,7 +346,7 @@
     top: 0;
     left: 0;
   }
-  
+
   .modal-overlay .modal {
     background: var(--background-color);
     border-radius: 10px;
@@ -350,7 +358,7 @@
     position: relative;
     width: 700px;
   }
-  
+
   .modal-overlay .modal .top-buttons {
     display: flex;
     justify-content: flex-end;
@@ -362,11 +370,11 @@
     z-index: 50;
     
   }
-  
+
   .modal-overlay .modal .top-buttons button:first-child {
     border-bottom-left-radius: 10px;
   }
-  
+
   .modal-overlay .modal .top-buttons button {
     background: var(--background-color);
     border: 1px;
@@ -380,20 +388,20 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .modal-overlay .modal .top-buttons .button-icon {
     font-size: 20px;
   }
-  
+
   .modal-overlay .modal button:hover {
     background: rgb(41, 58, 90);
   }
-  
+
   .modal-overlay .modal .image {
     display: block;
     width: 100%;
   }
-  
+
   .modal-overlay .modal .image img {
     box-shadow: rgba(0, 0, 0, 0.74) 0px 0px 20px;
     filter: brightness(90%);
@@ -402,28 +410,28 @@
     user-select: none;
     width: 100%;
   }
-  
+
   .modal-overlay .modal .information {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 30px;
   }
-  
+
   .modal-overlay .modal .information h1 {
     font-size: 2rem;
   }
-  
+
   .modal-overlay .modal .information p {
     color: var(--text-color-hover);
     line-height: 25px;
   }
-  
+
   .description-line {
     display: inline-block;
     width: 100%;
   }
-  
+
   @media screen and (max-width: 900px) {
     .modal-overlay .modal .top-buttons button {
       font-size: 20px;
@@ -431,13 +439,13 @@
       width: 75px;
     }
   }
-  
+
   @media screen and (max-width: 500px) {
     .modal-overlay .modal {
       width: 90%;
     }
   }
-  
+
   @media screen and (min-height: 500px) {
     .modal-overlay .modal {
       overflow-y: none;
@@ -446,7 +454,7 @@
       overflow: auto;
     }
   }
-  
+
   @media screen and (max-height: 500px) {
     .modal-overlay .modal {
       height: 90%;
