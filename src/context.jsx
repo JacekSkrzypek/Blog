@@ -55,7 +55,11 @@ export const AppProvider = ({ children }) => {
 };
 
 export const useGlobalContext = () => {
-  return useContext(AppContext);
+  const context = useContext(AppContext);
+  if(context === undefined) {
+    throw new Error('useContext must be used within a appProvider')
+  }
+  return context
 };
 
 export default { AppContext, AppProvider };
